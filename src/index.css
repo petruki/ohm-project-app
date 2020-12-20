@@ -4,7 +4,8 @@ html {
 }
 
 body {
-  background-color: #e4e4e4;
+  background-color: #3c3c3c;
+  color: #a6a6a6;
   font-size: medium;
   margin-bottom: 100px;
 }
@@ -13,7 +14,7 @@ footer {
   width: 100%;
   height: 60px;
   line-height: 60px;
-  background-color: #f5f5f5;
+  background-color: #1a1919;
   position: absolute;
   bottom: 0;
 }
@@ -25,6 +26,7 @@ footer {
 
 .form-control {
   font-size: medium;
+  background-color: #1a1919;
 }
 
 .pagination {
@@ -36,8 +38,12 @@ footer {
   display: flex;
 }
 
+.hide {
+  display: none;
+}
+
 .float-end {
-  float: inline-end;
+  float: right;
 }
 
 .center {
@@ -49,7 +55,18 @@ footer {
 }
 
 .card {
+  box-shadow: 0px 0px 5px #1a1919;
+  background-color: #1a1919;
+  border: 1px solid rgba(255, 255, 255, 0.13);
   margin: 10px
+}
+
+.card-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.pagination > li > a, .pagination > li > span {
+  background-color: #1a1919 !important;
 }
 
 .separtor, .left-separator, .right-separtor {
@@ -62,4 +79,46 @@ footer {
 
 .right-separtor {
   float: right;
+}
+
+.btn {
+  float: inline-end;
+  font-size: small;
+}
+
+.btn-search {
+  font-size: medium;
+  margin-left: 10px;
+}
+
+.btn-sync {
+  border-radius: 20px;
+}
+
+.project-col {
+  width: 50%;
+}
+
+.project-comment {
+  border: solid 1px #cecece;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.project-comment-container {
+  max-height: 200px;
+  overflow-x: auto;
+}
+
+.custom-select {
+  font-size: medium;
+  width: 30%;
+  background-color: #1a1919;
+  color: #bdbdbd;
+}
+
+.search {
+  width: 70%;
+  margin-left: 10px;
 }
