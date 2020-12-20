@@ -9,7 +9,6 @@ const PaginatorComponent = (props) => {
                 <option>20</option>
                 <option>25</option>
                 <option>30</option>
-                <option>50</option>
             </select>
             <ReactPaginate
                 previousLabel={'previous'}
