@@ -1,5 +1,5 @@
 @app
-begin-app
+ohm-project-app
 
 @static
 folder build

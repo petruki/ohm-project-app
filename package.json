@@ -1,12 +1,15 @@
 {
-  "name": "begin-app",
-  "description": "Begin Create React App + API",
+  "name": "ohm-project-app",
+  "description": "Ohm Project Player App",
   "version": "0.0.0",
   "proxy": "http://localhost:3333",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "3.4.4"
+    "react-scripts": "4.0.0",
+    "react-router-dom": "^5.2.0",
+    "bootstrap": "^4.5.3",
+    "react-paginate": "^6.5.0"
   },
   "scripts": {
     "start": "run-p start:react api",
@@ -16,7 +19,8 @@
     "eject": "react-scripts eject",
     "api": "cross-env NODE_ENV=testing ARC_LOCAL=1 npx sandbox",
     "test": "cross-env NODE_ENV=testing PORT=6666 tape test/**/*-test.js test/*-test.js | tap-spec",
-    "serve": "run-s build api"
+    "serve": "run-s build api",
+    "local": "react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"
