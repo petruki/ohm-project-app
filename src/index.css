@@ -23,14 +23,22 @@ audio {
   width: 100%;
 }
 
-#perPage {
-  width: auto;
-  font-size: initial;
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .form-control {
   font-size: medium;
   background-color: #1a1919;
+}
+
+.pagination-container {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 .pagination {
@@ -61,7 +69,7 @@ audio {
 .card {
   box-shadow: 0px 0px 5px #1a1919;
   background-color: #1a1919;
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  border: none;
   margin: 10px
 }
 
@@ -104,7 +112,7 @@ audio {
 }
 
 .btn {
-  float: inline-end;
+  float: right;
   font-size: small;
 }
 
@@ -151,4 +159,63 @@ audio {
 .project-detail-container {
   max-height: 300px;
   overflow: auto;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:0) { 
+  audio {
+    filter: invert(1);
+  }
+}
+
+@-moz-document url-prefix() {
+  audio {
+    filter: invert(0);
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .card, .panel {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card-body {
+    padding: 0.2rem;
+  }
+
+  .btn-sync {
+    display: none;
+  }
+
+  .pagination {
+    display: inline;
+  }
+
+  .panel-search {
+    padding: 1.2rem;
+    display: block;
+  }
+
+  .search {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+  }
+
+  .custom-select {
+    width: 100%;
+  }
+
+  .btn-search {
+    float: right;
+  }
+
+  .sticky {
+    position: relative;
+  }
+
+  .pagination-container {
+    position: relative;
+  }
 }

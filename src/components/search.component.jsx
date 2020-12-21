@@ -13,9 +13,9 @@ export const SearchComponent = (props) => {
     }
     
     return (
-        <div className="card">
+        <div className="card sticky">
             <div className="card-header">Search</div>
-            <div className="card-body display-flex">
+            <div className="card-body display-flex panel-search">
                 <select className="custom-select" value={searchOption} onChange={(e) => setSearchOption(e.target.value)}>
                     <option value="q">Project</option>
                     <option value="style">Style</option>

@@ -3,13 +3,7 @@ import ReactPaginate from 'react-paginate';
 
 const PaginatorComponent = (props) => {
     return (
-        <div className="display-flex float-end">
-            <select id="perPage" className="form-control" onChange={props.handleChangePerPage}>
-                <option>10</option>
-                <option>20</option>
-                <option>25</option>
-                <option>30</option>
-            </select>
+        <div className="row center pagination-container">
             <ReactPaginate
                 previousLabel={'previous'}
                 nextLabel={'next'}

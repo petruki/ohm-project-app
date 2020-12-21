@@ -47,22 +47,18 @@ const HomeComponent = () => {
                 handlePageSearch={handlePageSearch} 
                 setLoading={setLoading} 
                 setResponse={setResponse} />
-            <div className="card">
-                <div className="card-body">
-                    {!loading ?
-                        <div>
-                            {response.data.map((data, key) => 
-                                <PlayerComponent key={key} data={data} />
-                            )}
-                            <PaginatorComponent 
-                                pages={pagination.pages} 
-                                handlePageClick={handlePageClick} 
-                                handleChangePerPage={handleChangePerPage} />
-                        </div> : 
-                        <LoadingComponent />
-                    }
-                </div>
-            </div>
+            {!loading ?
+                <div>
+                    {response.data.map((data, key) => 
+                        <PlayerComponent key={key} data={data} />
+                    )}
+                    <PaginatorComponent 
+                        pages={pagination.pages} 
+                        handlePageClick={handlePageClick} 
+                        handleChangePerPage={handleChangePerPage} />
+                </div> : 
+                <LoadingComponent />
+            }
         </div>
     );
 }
