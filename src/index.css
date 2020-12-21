@@ -234,6 +234,7 @@ hr {
 .player-menu {
   position: absolute;
   right: 0;
+  top: 20px;
 }
 
 @media only screen and (max-width: 770px) {
