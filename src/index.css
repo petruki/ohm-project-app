@@ -1,3 +1,15 @@
+@keyframes showIn {
+  0% {
+    max-height: 0px;
+    opacity: 0;
+  }
+
+  100% {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -12,18 +24,43 @@ body {
 
 footer {
   width: 100%;
-  height: 60px;
-  line-height: 60px;
+  line-height: 30px;
   background-color: #1a1919;
   position: absolute;
   bottom: 0;
+  padding: 10px;
+}
+
+.footer-right {
+  margin-top: 6px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.link:hover {
+  filter: invert(100%);
+  text-decoration: none;
 }
 
 audio {
   width: 100%;
 }
 
+a {
+  color: #959595;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .sticky {
+  transition: all .3s;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -36,14 +73,14 @@ audio {
 
 .pagination-container {
   position: sticky;
-  bottom: 0;
+  bottom: 10px;
   width: 100%;
   z-index: 100;
 }
 
 .pagination {
   margin: inherit;
-  padding-left: 5px;
+  box-shadow: 0px 0px 10px black;
 }
 
 .display-flex {
@@ -64,6 +101,10 @@ audio {
 
 .label-title {
   font-weight: bold;
+}
+
+.bg-dark {
+  background-color: #1a1919 !important;
 }
 
 .card {
@@ -154,11 +195,45 @@ audio {
 
 .row {
   margin: auto;
+  animation: .5s ease-in 0s 1 showIn;
+}
+
+.fa {
+  float: right;
+  top: 6px;
+  position: relative;
 }
 
 .project-detail-container {
   max-height: 300px;
   overflow: auto;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #141313;
+  min-width: 100px;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  padding: 6px 8px;
+  z-index: 1;
+  width: 200px;
+  transform: translateY(30%);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  right: 0;
+}
+
+.player-menu {
+  position: absolute;
+  right: 0;
 }
 
 @media only screen and (max-width: 770px) {
@@ -176,7 +251,9 @@ audio {
   }
 
   .pagination {
+    background-color: #1a1919;
     display: inline;
+    margin-top: 10px;
   }
 
   .panel-search {
@@ -197,10 +274,6 @@ audio {
 
   .btn-search {
     float: right;
-  }
-
-  .sticky {
-    position: relative;
   }
 
   .pagination-container {
