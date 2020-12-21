@@ -90,7 +90,7 @@ audio {
 
 .panel-heading {
   border-bottom: 1px solid rgba(255, 255, 255, 0.13) !important;
-  background-color: #191818 !important;
+  background-color: #0000 !important;
   color: #ddd !important;
   border-color: #373636;
 }
@@ -159,18 +159,6 @@ audio {
 .project-detail-container {
   max-height: 300px;
   overflow: auto;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio:0) { 
-  audio {
-    filter: invert(1);
-  }
-}
-
-@-moz-document url-prefix() {
-  audio {
-    filter: invert(0);
-  }
 }
 
 @media only screen and (max-width: 770px) {
