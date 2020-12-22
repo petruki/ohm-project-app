@@ -16,10 +16,10 @@ const PlayerComponent = (props) => {
 
         setLoading(true);
         sync(id).then(data => {
-            if (isSaved(id)) {
+            if (isSaved(id))
                 save(id, data);
-                Object.assign(props.data, data);
-            }
+                
+            Object.assign(props.data, data);
             setLoading(false);
         });
         var eleman = document.getElementById(id);
