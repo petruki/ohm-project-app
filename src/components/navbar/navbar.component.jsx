@@ -7,7 +7,7 @@ const NavbarComponent = () => {
     return (
         <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
-                <div className="navbar-nav">
+                <div id="ohm-nav" className="navbar-nav">
                     <Link to="/"><img src="../assets/logo.png" alt="Ohm Studio"></img></Link>
                 </div>
             </nav>

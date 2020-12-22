@@ -20,6 +20,7 @@ const HomeComponent = () => {
         pagination.page = data.selected + 1;
         setPagination(pagination);
         
+        setResponse({ data: [] });
         find(seachHistory.search, seachHistory.searchOption, pagination).then(data => {
             pagination.pages = data.meta.pages;
             setPagination(pagination)
@@ -65,10 +66,15 @@ const HomeComponent = () => {
                     {response.data.map((data, key) => 
                         <PlayerComponent key={key} data={data} info={info} />
                     )}
-                    {response.data.length ?
+                    {response.data ?
                         <PaginatorComponent 
                             pages={pagination.pages} 
-                            handlePageClick={handlePageClick} /> : ''}
+                            handlePageClick={handlePageClick} /> :
+                    
+                    // Page Content 
+                    <div id="home-wrapper" className="container">
+                        <img id="ohmplayerbg" src="../assets/ohmplayer_bg.png" alt="Ohm Player"></img>
+                    </div>}
                 </div> : 
                 <LoadingComponent />
             }
