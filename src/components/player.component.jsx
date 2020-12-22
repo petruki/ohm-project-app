@@ -40,8 +40,8 @@ const PlayerComponent = (props) => {
                 </a>
             </div>
             {props.info ?
-            <div className="card-body display-flex">
-                <div className={props.data.comments.length ? 'project-col' : 'project-col-no-comments'}>
+            <div className="card-body">
+                <div className={props.data.comments.length ? 'col' : 'project-col-no-comments'}>
                     <div className="row">
                         <div className="panel panel-default col">
                             <div className="panel-heading label-title">Description</div>
@@ -92,7 +92,7 @@ const PlayerComponent = (props) => {
                     </div> : ''}
                 </div>
                 {view && props.data.comments.length ?
-                <div className="project-col">
+                <div className="col">
                     {props.data.comments.map((comment, key) =>
                         <div key={key} className="project-comment">
                             <span className="label-title">{comment.author}</span>

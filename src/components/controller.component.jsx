@@ -43,8 +43,10 @@ export const ControllerComponent = (props) => {
                         onChange={(e) => setSearch(e.target.value)}></input>
                     <button className="btn btn-dark">Find</button>
                 </form>
-                <button className="btn btn-dark" onClick={() => props.showPlaylist()}>Playlist</button>
-                <button className="btn btn-dark" onClick={() => props.toggleInfo()}>Info</button>
+                <button className="btn btn-dark" title="Displays saved project"
+                    onClick={() => props.showPlaylist()}>Playlist</button>
+                <button className="btn btn-dark" title="Show/hide project details"
+                    onClick={() => props.toggleInfo()}>Info</button>
             </div>
         </div>
     ); 
