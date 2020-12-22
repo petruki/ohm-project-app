@@ -69,12 +69,13 @@ const HomeComponent = () => {
                     {response.data ?
                         <PaginatorComponent 
                             pages={pagination.pages} 
-                            handlePageClick={handlePageClick} /> :
+                            handlePageClick={handlePageClick} /> : ''}
                     
-                    // Page Content 
-                    <div id="home-wrapper" className="container">
-                        <img id="ohmplayerbg" src="../assets/ohmplayer_bg.png" alt="Ohm Player"></img>
-                    </div>}
+                    {!response.data.length ?
+                        // Page Content 
+                        <div id="home-wrapper" className="container">
+                            <img id="ohmplayerbg" src="../assets/ohmplayer_bg.png" alt="Ohm Player"></img>
+                        </div> : ''}
                 </div> : 
                 <LoadingComponent />
             }
