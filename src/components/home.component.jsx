@@ -37,9 +37,15 @@ const HomeComponent = () => {
     }
 
     const showPlaylist = () => {
-        let data = {...response.data};
-        data = getAll();
-        setResponse({ data });
+        setLoading(true);
+        
+        // little trick to update audio src
+        setTimeout(() => {
+            let data = {...response.data};
+            data = getAll();
+            setResponse({ data });
+            setLoading(false);
+        }, 300);
     }
 
     const toggleInfo = () => {
