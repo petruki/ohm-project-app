@@ -1,7 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { sync } from '../services/api';
-import { save, isSaved, remove } from '../services/playlist';
+import { sync } from '../../services/api';
+import { save, isSaved, remove } from '../../services/playlist';
+
+import './player.css';
 
 const PlayerComponent = (props) => {
     const [view, setView] = useState(props.view ? props.view : false);
@@ -16,7 +18,6 @@ const PlayerComponent = (props) => {
     }
 
     const toggleView = (e) => {
-        e.preventDefault();
         setView(!view);
     }
 
@@ -34,12 +35,12 @@ const PlayerComponent = (props) => {
 
     return (
         <div className="card">
-            <div className="card-header">
+            <div className="card-header" onClick={toggleView}>
                 <a href={'http://www.ohmstudio.com' + props.data.page} target="_blank" rel="noreferrer">
                     <strong>{props.data.project}</strong>
                 </a>
             </div>
-            {props.info ?
+            {props.info || view ?
             <div className="card-body">
                 <div className={props.data.comments.length ? 'col' : 'project-col-no-comments'}>
                     <div className="row">
@@ -53,9 +54,6 @@ const PlayerComponent = (props) => {
                                 <Link className="nav-item nav-link" to={`/project/${props.data._id}`} target="_blank">
                                     <i className="fa fa-level-down"></i> Open
                                 </Link>
-                                <a className="nav-item nav-link" href="/" onClick={toggleView}>
-                                    <i className="fa fa-search-plus"></i> Show/Hide Detail
-                                </a>
                                 <a ref={bookmarkRef} className="nav-item nav-link" href="/"
                                     onClick={(e) => onBookmark(e, props.data._id, props.data)}>
                                     {isSaved(props.data._id) ? 'Remove Playlist' : 'Add Playlist'}

@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 
-export const ControllerComponent = (props) => {
+import './home-header.css';
+
+export const HomeHeaderComponent = (props) => {
     const [search, setSearch] = useState('');
     const [searchOption, setSearchOption] = useState('q');
     const searchRef = useRef(null);
@@ -52,4 +54,4 @@ export const ControllerComponent = (props) => {
     ); 
 }
 
-export default ControllerComponent;
+export default HomeHeaderComponent;

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import PaginatorComponent from './paginator.component';
-import { find } from '../services/api';
-import "bootstrap/dist/css/bootstrap.min.css";
+import { find } from '../../services/api';
 
-import PlayerComponent from './player.component';
-import LoadingComponent from './loading.component';
-import ControllerComponent from './controller.component';
-import { getAll } from '../services/playlist';
+import PaginatorComponent from '../paginator/paginator.component';
+import PlayerComponent from '../player/player.component';
+import LoadingComponent from '../loading/loading.component';
+import HomeHeaderComponent from '../home-header/home-header.component';
+import { getAll } from '../../services/playlist';
+
+import './home.css';
 
 const HomeComponent = () => {
     const [response, setResponse] = useState({ data: [] });
@@ -54,7 +55,7 @@ const HomeComponent = () => {
 
     return (
         <div>
-            <ControllerComponent 
+            <HomeHeaderComponent 
                 handlePageSearch={handlePageSearch} 
                 showPlaylist={showPlaylist} 
                 toggleInfo={toggleInfo} />

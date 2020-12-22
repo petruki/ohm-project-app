@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './loading.css';
+
 export const LoadingComponent = (props) => {
     return (
         <div className="center">

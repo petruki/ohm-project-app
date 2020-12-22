@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 
+import './paginator.css';
+
 const PaginatorComponent = (props) => {
     return (
         <div className="row center pagination-container">

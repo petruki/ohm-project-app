@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { findById } from '../services/api';
+import { findById } from '../../services/api';
 import PlayerComponent from './player.component';
 
 const PlayerStandaloneComponent = (props) => {

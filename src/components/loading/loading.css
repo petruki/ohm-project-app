@@ -1,0 +1,15 @@
+.center {
+  text-align: center;
+}
+
+.separtor, .left-separator, .right-separtor {
+  width: 40%;
+}
+
+.left-separator {
+  float: left;
+}
+
+.right-separtor {
+  float: right;
+}

@@ -1,0 +1,27 @@
+.pagination-container {
+  position: sticky;
+  bottom: 10px;
+  width: 100%;
+  z-index: 100;
+}
+
+.pagination {
+  margin: inherit;
+  box-shadow: 0px 0px 10px black;
+}
+
+.pagination > li > a, .pagination > li > span {
+  background-color: #1a1919 !important;
+}
+
+@media only screen and (max-width: 770px) {
+  .pagination {
+    background-color: #1a1919;
+    display: inline;
+    margin-top: 10px;
+  }
+
+  .pagination-container {
+    position: relative;
+  }
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './footer.css';
+
 export const FooterComponent = (props) => {
     return (
         <footer className="footer center">

@@ -1,0 +1,56 @@
+form {
+  width: 100%;
+  display: contents;
+}
+
+.form-control {
+  font-size: medium;
+  background-color: #1a1919;
+}
+
+.sticky {
+  transition: all .3s;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.custom-select {
+  font-size: medium;
+  width: 30%;
+  background-color: #1a1919;
+  color: #bdbdbd;
+}
+
+.search {
+  width: 70%;
+  margin-left: 10px;
+}
+
+.btn {
+  float: right;
+  font-size: medium;
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 770px) {
+   .panel-search {
+    padding: 1.2rem;
+    display: block;
+  }
+
+  .search {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+  }
+
+  .custom-select {
+    width: 100%;
+  }
+}
