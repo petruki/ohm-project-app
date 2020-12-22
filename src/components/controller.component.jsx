@@ -1,15 +1,16 @@
 import React, { useState, useRef } from 'react';
 
-export const SearchComponent = (props) => {
+export const ControllerComponent = (props) => {
     const [search, setSearch] = useState('');
     const [searchOption, setSearchOption] = useState('q');
     const searchRef = useRef(null);
     let prevScrollpos;
 
-    const onPressedEnter = (e) => {
-        if (e.key === 'Enter') {
-            props.handlePageSearch(search, searchOption);
-        }
+    const onSearch = (e) => {
+        e.preventDefault();
+        
+        setSearch('');
+        props.handlePageSearch(search, searchOption);
     }
 
     const scrollMenuHandler = () => {
@@ -37,12 +38,16 @@ export const SearchComponent = (props) => {
                     <option value="collab">Contributor</option>
                     <option value="admin">Admin</option>
                 </select>
-                <input className="form-control search" type="text" placeholder="Search" value={search}
-                    onChange={(e) => setSearch(e.target.value)} onKeyDown={onPressedEnter}></input>
-                <button className="btn btn-primary btn-search" onClick={() => props.handlePageSearch(search, searchOption)}>Find</button>
+                <form onSubmit={(e) => onSearch(e)}>
+                    <input className="form-control search" type="text" placeholder="Search" value={search} required
+                        onChange={(e) => setSearch(e.target.value)}></input>
+                    <button className="btn btn-dark">Find</button>
+                </form>
+                <button className="btn btn-dark" onClick={() => props.showPlaylist()}>Playlist</button>
+                <button className="btn btn-dark" onClick={() => props.toggleInfo()}>Info</button>
             </div>
         </div>
     ); 
 }
 
-export default SearchComponent;
+export default ControllerComponent;

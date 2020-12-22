@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NavbarComponent = () => {
     return (
         <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
                 <div className="navbar-nav">
-                    <img src="../assets/logo.png" alt="Ohm Studio"></img>
+                    <Link to="/"><img src="../assets/logo.png" alt="Ohm Studio"></img></Link>
                 </div>
             </nav>
         </div>

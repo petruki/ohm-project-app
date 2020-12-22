@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomeComponent from "./components/home.component";
-import PlayerComponent from "./components/player.component";
 import NavbarComponent from "./components/navbar.component";
 import FooterComponent from "./components/footer.component";
+import PlayerStandaloneComponent from "./components/player-standalone.component";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <NavbarComponent />
         <div className="container">
           <Route path="/" exact component={HomeComponent} />
-          <Route path="/project/:id" exact component={PlayerComponent} />
+          <Route path="/project/:id" exact component={PlayerStandaloneComponent} />
         </div>
       </React.Fragment>
       <FooterComponent />

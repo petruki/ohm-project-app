@@ -5,53 +5,63 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import PlayerComponent from './player.component';
 import LoadingComponent from './loading.component';
-import SearchComponent from './search.component';
+import ControllerComponent from './controller.component';
+import { getAll } from '../services/playlist';
 
 const HomeComponent = () => {
     const [response, setResponse] = useState({ data: [] });
     const [loading, setLoading] = useState(false);
     const [pagination, setPagination] = useState({ perPage: 10, page: 1, pages: 0 });
     const [seachHistory] = useState({});
+    const [info, setInfoVisible] = useState(false);
 
     const handlePageClick = (data) => {
         pagination.page = data.selected + 1;
         setPagination(pagination);
-
-        setResponse(undefined);
-        setLoading(true);
+        
         find(seachHistory.search, seachHistory.searchOption, pagination).then(data => {
             pagination.pages = data.meta.pages;
-            setResponse(data);
             setPagination(pagination)
+            setResponse(data);
             setLoading(false);
         });
     };
 
-    const handleChangePerPage = (event) => {
-        pagination.perPage = event.target.value;
-        setPagination(pagination);
-        handlePageClick(seachHistory.search, seachHistory.searchOption, { selected: 0 });
-    }
-
     const handlePageSearch = (search, searchOption) => {
         seachHistory.search = search;
         seachHistory.searchOption = searchOption;
+
+        pagination.page = 1;
+        setLoading(true);
         handlePageClick({ selected: 0 });
+    }
+
+    const showPlaylist = () => {
+        let data = {...response.data};
+        data = getAll();
+        setResponse({ data });
+    }
+
+    const toggleInfo = () => {
+        setInfoVisible(!info);
     }
 
     return (
         <div>
-            <SearchComponent handlePageSearch={handlePageSearch} />
+            <ControllerComponent 
+                handlePageSearch={handlePageSearch} 
+                showPlaylist={showPlaylist} 
+                toggleInfo={toggleInfo} />
+                
             {!loading ?
                 <div>
                     {response.data.map((data, key) => 
-                        <PlayerComponent key={key} data={data} />
+                        <PlayerComponent key={key} data={data} info={info} />
                     )}
                     {response.data.length ?
                         <PaginatorComponent 
                             pages={pagination.pages} 
-                            handlePageClick={handlePageClick} 
-                            handleChangePerPage={handleChangePerPage} /> : ''}
+                            handlePageClick={handlePageClick} /> : ''}
                 </div> : 
                 <LoadingComponent />
             }
