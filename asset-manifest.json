@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/ohm-project-app/static/css/main.3742a847.chunk.css",
+    "main.js": "/ohm-project-app/static/js/main.89c598db.chunk.js",
+    "main.js.map": "/ohm-project-app/static/js/main.89c598db.chunk.js.map",
+    "runtime-main.js": "/ohm-project-app/static/js/runtime-main.2568f48f.js",
+    "runtime-main.js.map": "/ohm-project-app/static/js/runtime-main.2568f48f.js.map",
+    "static/css/2.1a02f21c.chunk.css": "/ohm-project-app/static/css/2.1a02f21c.chunk.css",
+    "static/js/2.78dc7ace.chunk.js": "/ohm-project-app/static/js/2.78dc7ace.chunk.js",
+    "static/js/2.78dc7ace.chunk.js.map": "/ohm-project-app/static/js/2.78dc7ace.chunk.js.map",
+    "index.html": "/ohm-project-app/index.html",
+    "static/css/2.1a02f21c.chunk.css.map": "/ohm-project-app/static/css/2.1a02f21c.chunk.css.map",
+    "static/css/main.3742a847.chunk.css.map": "/ohm-project-app/static/css/main.3742a847.chunk.css.map",
+    "static/js/2.78dc7ace.chunk.js.LICENSE.txt": "/ohm-project-app/static/js/2.78dc7ace.chunk.js.LICENSE.txt",
+    "static/media/github.ca3156b4.svg": "/ohm-project-app/static/media/github.ca3156b4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2568f48f.js",
+    "static/css/2.1a02f21c.chunk.css",
+    "static/js/2.78dc7ace.chunk.js",
+    "static/css/main.3742a847.chunk.css",
+    "static/js/main.89c598db.chunk.js"
+  ]
+}
