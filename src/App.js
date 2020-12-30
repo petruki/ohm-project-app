@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, BrowserRouter as Router, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomeComponent from "./components/home/home.component";
@@ -9,18 +9,16 @@ import ProjectStandaloneComponent from "./components/project/project-standalone.
 
 const App = () => {
   return (
-    <Router>
-      <React.Fragment>
-        <NavbarComponent />
-        <div className="container">
-          <BrowserRouter basename="/ohm-project-app">
-            <Route exact path="/" component={HomeComponent} />
-            <Route exact path="/project/:id" component={ProjectStandaloneComponent} />
-          </BrowserRouter>
-        </div>
-      </React.Fragment>
+    <div>
+      <NavbarComponent />
+      <div className="container">
+        <Switch>
+          <Route exact path="/" component={HomeComponent} />
+          <Route path="/project/:id" component={ProjectStandaloneComponent} />
+        </Switch>
+      </div>
       <FooterComponent />
-    </Router>
+    </div>
   );
 }
 
