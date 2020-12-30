@@ -3,8 +3,10 @@
   "description": "Ohm Project Player App",
   "version": "0.0.0",
   "proxy": "http://localhost:3333",
+  "homepage": "https://petruki.github.io/ohm-project-app/",
   "dependencies": {
     "bootstrap": "^4.5.3",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-modal": "^3.12.1",
@@ -19,7 +21,9 @@
     "eject": "react-scripts eject",
     "api": "cross-env NODE_ENV=testing ARC_LOCAL=1 npx sandbox",
     "serve": "run-s build api",
-    "local": "react-scripts start"
+    "local": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
