@@ -13,8 +13,8 @@ const App = () => {
       <React.Fragment>
         <NavbarComponent />
         <div className="container">
-          <Route path="/" exact component={HomeComponent} />
-          <Route path="/project/:id" exact component={ProjectStandaloneComponent} />
+          <Route path="/ohm-project-app" exact component={HomeComponent} />
+          <Route path="/ohm-project-app/project/:id" exact component={ProjectStandaloneComponent} />
         </div>
       </React.Fragment>
       <FooterComponent />
