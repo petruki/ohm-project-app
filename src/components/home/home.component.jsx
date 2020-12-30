@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { find } from '../../services/api';
 
 import PaginatorComponent from '../paginator/paginator.component';
-import PlayerComponent from '../player/player.component';
+import ProjectComponent from '../project/project.component';
 import LoadingComponent from '../loading/loading.component';
 import HomeHeaderComponent from '../home-header/home-header.component';
 import { getAll } from '../../services/playlist';
@@ -25,6 +25,9 @@ const HomeComponent = () => {
             pagination.pages = data.meta.pages;
             setPagination(pagination)
             setResponse(data);
+            setLoading(false);
+        }).catch((e) => {
+            console.log('API is offline');
             setLoading(false);
         });
     };
@@ -64,7 +67,7 @@ const HomeComponent = () => {
             {!loading ?
                 <div>
                     {response.data.map((data, key) => 
-                        <PlayerComponent key={key} data={data} info={info} />
+                        <ProjectComponent key={key} data={data} info={info} />
                     )}
                     {response.data ?
                         <PaginatorComponent 

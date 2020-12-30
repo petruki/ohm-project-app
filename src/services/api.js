@@ -30,7 +30,10 @@ export function findById(id) {
     .then(handleResponse);
 }
 
-export function sync(id) {
-  return fetch(`${API_URL}/project/sync/${id}`, requestOptions('PATCH'))
-    .then(handleResponse);
+export function sync(id, cookie) {
+  return fetch(`${API_URL}/project/sync/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ cookie })
+  }).then(handleResponse);
 }

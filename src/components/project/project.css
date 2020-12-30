@@ -2,6 +2,10 @@ audio {
   width: 100%;
 }
 
+input {
+  color: black;
+}
+
 .float-end {
   float: right;
 }
@@ -75,6 +79,22 @@ audio {
   float: right;
   top: 6px;
   position: relative;
+}
+
+.Modal {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  border: 1px solid rgb(53, 53, 53);
+  box-shadow: 0px 0px 10px #606060;
+  background: rgb(30, 30, 30) none repeat scroll 0% 0%;
+  overflow: auto;
+  border-radius: 4px;
+  outline: currentcolor none medium;
+  padding: 20px;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  min-width: 20%;
+  border-radius: 20px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) { 

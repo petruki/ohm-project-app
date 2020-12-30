@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import HomeComponent from "./components/home/home.component";
 import NavbarComponent from "./components/navbar/navbar.component";
 import FooterComponent from "./components/footer/footer.component";
-import PlayerStandaloneComponent from "./components/player/player-standalone.component";
+import ProjectStandaloneComponent from "./components/project/project-standalone.component";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <NavbarComponent />
         <div className="container">
           <Route path="/" exact component={HomeComponent} />
-          <Route path="/project/:id" exact component={PlayerStandaloneComponent} />
+          <Route path="/project/:id" exact component={ProjectStandaloneComponent} />
         </div>
       </React.Fragment>
       <FooterComponent />

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { findById } from '../../services/api';
-import PlayerComponent from './player.component';
+import ProjectComponent from './project.component';
 
-const PlayerStandaloneComponent = (props) => {
+const ProjectStandaloneComponent = (props) => {
     const params = useParams();
     const [projectData, setProjectData] = useState(undefined);
 
@@ -17,9 +17,9 @@ const PlayerStandaloneComponent = (props) => {
 
     return (
         <div>
-            {projectData ? <PlayerComponent data={projectData} view={true} info={true} /> : ''}
+            {projectData ? <ProjectComponent data={projectData} view={true} info={true} /> : ''}
         </div>
     );
 }
 
-export default PlayerStandaloneComponent;
+export default ProjectStandaloneComponent;
