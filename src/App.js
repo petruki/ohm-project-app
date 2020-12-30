@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomeComponent from "./components/home/home.component";
@@ -13,8 +13,10 @@ const App = () => {
       <React.Fragment>
         <NavbarComponent />
         <div className="container">
-          <Route path="/" component={HomeComponent} />
-          <Route exact path="/project/:id" component={ProjectStandaloneComponent} />
+          <BrowserRouter basename="/ohm-project-app">
+            <Route exact path="/" component={HomeComponent} />
+            <Route exact path="/project/:id" component={ProjectStandaloneComponent} />
+          </BrowserRouter>
         </div>
       </React.Fragment>
       <FooterComponent />

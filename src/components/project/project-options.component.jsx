@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { save, isSaved, remove } from '../../services/playlist';
 
 import './project.css';
@@ -23,9 +23,9 @@ const ProjectOptionsComponent = ({ data, openModal }) => {
         <div className="dropdown player-menu">
             <span className="nav-item nav-link player-menu">Options</span>
             <div className="dropdown-content">
-                <NavLink className="nav-item nav-link" to={`/project/${data._id}`} target="_blank">
+                <Link className="nav-item nav-link" to={`/project/${data._id}`} target="_blank">
                     <i className="fa fa-level-down"></i> Open
-                </NavLink>
+                </Link>
                 <a ref={bookmarkRef} className="nav-item nav-link" href="/"
                     onClick={(e) => onBookmark(e, data._id, data)}>
                     {isSaved(data._id) ? 'Remove Playlist' : 'Add Playlist'}
