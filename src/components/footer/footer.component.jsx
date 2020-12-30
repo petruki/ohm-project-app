@@ -1,5 +1,7 @@
 import React from 'react';
 
+import githubIcon from '../../images/github.svg';
+
 import './footer.css';
 
 export const FooterComponent = (props) => {
@@ -11,7 +13,7 @@ export const FooterComponent = (props) => {
             </p>
             <div className="footer-right">
                 <a className="link" href="https://github.com/petruki" target="_black">
-                    <img src="../assets/github.svg" width="30px;" alt="GitHub"/>
+                    <img src={githubIcon} width="30px;" alt="GitHub"/>
                 </a>
             </div>
         </footer>

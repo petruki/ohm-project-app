@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import logoImg from '../../images/logo.png';
+
 import './navbar.css';
 
 const NavbarComponent = () => {
@@ -8,7 +10,7 @@ const NavbarComponent = () => {
         <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
                 <div id="ohm-nav" className="navbar-nav">
-                    <Link to="/"><img src="../assets/logo.png" alt="Ohm Studio"></img></Link>
+                    <Link to="/"><img src={logoImg} alt="Ohm Studio"></img></Link>
                 </div>
             </nav>
         </div>

@@ -7,6 +7,8 @@ import LoadingComponent from '../loading/loading.component';
 import HomeHeaderComponent from '../home-header/home-header.component';
 import { getAll } from '../../services/playlist';
 
+import omhBg from '../../images/ohmplayer_bg.png';
+
 import './home.css';
 
 const HomeComponent = () => {
@@ -77,7 +79,7 @@ const HomeComponent = () => {
                     {!response.data.length ?
                         // Page Content 
                         <div id="home-wrapper" className="container">
-                            <img id="ohmplayerbg" src="../assets/ohmplayer_bg.png" alt="Ohm Player"></img>
+                            <img id="ohmplayerbg" src={omhBg} alt="Ohm Player"></img>
                         </div> : ''}
                 </div> : 
                 <LoadingComponent />

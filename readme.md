@@ -1,5 +1,3 @@
-[![Begin build status](https://buildstatus.begin.app/local-0s1/status.svg)](https://begin.com)
-
 Ohm Public Project Player is a simple interface to Ohm Studio public project repositories.
 
 ### Features
